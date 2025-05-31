@@ -1,0 +1,23 @@
+{
+  "name": "pf_dpw",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alejandro-Montepeque/PF_DPW.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alejandro-Montepeque/PF_DPW/issues"
+  },
+  "homepage": "https://github.com/Alejandro-Montepeque/PF_DPW#readme",
+  "description": "",
+  "dependencies": {
+    "bootstrap": "^5.3.6"
+  }
+}
