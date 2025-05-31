@@ -1,6 +1,6 @@
 # 🧩 Proyecto Final - Soluciones de Desarrollo y Seguridad para E-commerce
 
-Este es el proyecto final para la materia de [nombre de la materia o carrera, si querés agregarlo].  
+Este es el proyecto final para la materia de [Diseño de Painas Web].  
 Consiste en un sitio web informativo sobre la **venta de servicios de desarrollo web**, **diseño responsivo** y **ciberseguridad para plataformas e-commerce**.
 
 ## 🚀 Tecnologías utilizadas
