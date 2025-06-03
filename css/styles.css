@@ -1,6 +1,7 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
+  background-color: rgb(248,249,251);
 }
 
 .navbar {
@@ -35,4 +36,20 @@ body {
 .nav-links a:hover,
 .nav-links a.active {
   color: #f1c40f;
+}
+
+i {
+    color: #1F2527;
+}
+
+.form-label {
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+  margin-left: 0.5rem;
+  --bs-text-opacity: 1;
+  color: var(--bs-secondary-color) !important;
+}
+
+textarea {
+    height: 180px;
 }

@@ -3,13 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Team</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+
+
 </head>
 <body>
     <!-- Este es el div donde va el navbar de arriba -->
     <div id="navbar-container"></div>
-    <h1>Aqui va la vista del equipo</h1>
+    <div class="container d-md-flex flex-column justify-content-md-center">
+        <div class="text-center">
+            <h1>Nuestro Grandioso Equipo</h1>
+            <p>Concoe al equipo que impulsa nuestras soluciones tecnológicas</p>
+        </div>
+        <div class="row justify-content-center py-5">
+            <div class="col-md-4 team-member">
+                <h3>Fernando Linarez</h3>
+                <p>Desarrollador Front-End</p>
+                <div>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://github.com/Fern4ndoDdiaz"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+            <div class="col-md-4 team-member">
+                <h3>Daniel Hernandez</h3>
+                <p >Lider De proyecto</p>
+                <div>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://github.com/DanielGerardoHC"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+            <div class="col-md-4 team-member">
+                <h3>Alejandro Montepeque</h3>
+                <p>Desarrollador</p>
+                <div>
+                    <a href="https://github.com/Alejandro-Montepeque"><i class=" fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/montepeque/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com/share/16YqPmAnQH/"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            Somos un equipo multidisciplinario con experiencia en diseño, desarrollo y marketing digital. Nuestro objetivo es ayudarte a crear productos increíbles.
+        </div>
+    </div>
     <!-- Este es el script para configurar que el navbar se pinte en cada pantalla que este presente el div mencionado -->
     <script src="../js/main.js"></script>
 </body>
