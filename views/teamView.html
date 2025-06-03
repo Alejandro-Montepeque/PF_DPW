@@ -11,15 +11,6 @@
     <div id="navbar-container"></div>
     <h1>Aqui va la vista del equipo</h1>
     <!-- Este es el script para configurar que el navbar se pinte en cada pantalla que este presente el div mencionado -->
-    <script>
-        // Se hace una petición para obtener el archivo 'navbarComponent.html'y donde se encuentra ubicado
-        fetch('../components/navbarComponent.html')
-             // Cuando la respuesta llega, se convierte a texto (el contenido HTML)
-            .then(response => response.text())
-            // Con el contenido HTML recibido, se inserta dentro del elemento con id 'navbar-container'
-            .then(html => {
-                document.getElementById('navbar-container').innerHTML = html;
-            })
-    </script>
+    <script src="../js/main.js"></script>
 </body>
 </html>
