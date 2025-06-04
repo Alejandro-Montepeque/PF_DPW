@@ -3,7 +3,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap';
 
  // Se hace una petición para obtener el archivo 'navbarComponent.html'y donde se encuentra ubicado
-    fetch('../public/navbarComponent.html')
+    fetch('/navbarComponent.html')
         // Cuando la respuesta llega, se convierte a texto (el contenido HTML)
         .then(response => response.text())
         // Con el contenido HTML recibido, se inserta dentro del elemento con id 'navbar-container'
