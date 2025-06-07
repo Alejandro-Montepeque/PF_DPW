@@ -1,15 +1,20 @@
-body {
+/*  RESET Y BASE */
+html, body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: rgb(248,249,251);
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: rgb(248, 249, 251);
 }
 
+/* BARRA DE NAVEGACIÓN */
 .navbar {
   background-color: #1e2227;
   padding: 16px 32px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .logo {
@@ -24,6 +29,7 @@ body {
   gap: 32px;
   margin: 0;
   padding: 0;
+  flex-wrap: wrap;
 }
 
 .nav-links a {
@@ -38,40 +44,65 @@ body {
   color: #f1c40f;
 }
 
+/* ICONOS */
 i {
-    color: #1F2527;
+  color: #1F2527;
 }
 
+/* FORMULARIOS */
 .form-label {
   font-size: 0.85rem;
   margin-bottom: 0.25rem;
   margin-left: 0.5rem;
-  --bs-text-opacity: 1;
-  color: var(--bs-secondary-color) !important;
+  color: var(--bs-secondary-color, #6c757d);
 }
 
 textarea {
-    height: 180px;
-}
-<!---->
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 180px;
+  resize: vertical;
 }
 
+/* HERO SECTION */
 .hero-section {
   background-image: url(/assets/images/Background-img.png);
   background-size: cover;
+  background-position: center;
   height: 100vh;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
 }
 
+/* BOTONES PERSONALIZADOS */
 .btn-warning {
   background-color: #ffc107;
   border: none;
+  color: #000;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .navbar {
+    padding: 12px 16px;
+  }
+
+  .hero-section {
+    padding: 0 20px;
+    text-align: center;
+  }
 }
 
 .btn-warning:hover {
