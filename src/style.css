@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar-custom {
+  background-color: #1e2227 !important;
+}
+
+.navbar-custom .navbar-brand {
+  color: #f1c40f !important;
+  font-weight: bold;
+}
+
+.navbar-custom .nav-link {
+  color: #fff !important;
+  transition: color 0.3s ease;
+}
+
+.navbar-custom .nav-link:hover,
+.navbar-custom .nav-link:focus,
+.navbar-custom .nav-link.active {
+  color: #f1c40f !important;
+}
+
+hero-section {
+  background-image: url(/public/assets/Background-img.png);
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+.btn-warning {
+  background-color: #ffc107;
+  border: none;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800;
+}

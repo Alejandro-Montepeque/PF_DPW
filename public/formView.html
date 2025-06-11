@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formView</title>
+    <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+    <div id="navbar-container"></div>
+    <div class="container d-md-flex flex-column justify-content-md-center">
+        <div class="text-center">
+            <h1>Contactenos</h1>
+            <p>Puedes ponerte en contacto con nosotros atravez de este formulario</p>
+        </div>
+        <div class="row">
+            <div class="col-md-6 py-5">
+                <div>
+                    <label class="form-label" for="name">Ingresa tu nombre</label>
+                    <input class="form-control" type="text" id="name" placeholder="Your Name*">
+                </div>
+                <div>
+                    <label class="form-label" for="email">Ingresa tu correo electronico</label>
+                    <input class="form-control" type="text" id="email" placeholder="Your Email*">
+                </div>
+                <div>
+                    <label class="form-label" for="phone">Ingresa tu telefono</label>
+                    <input class="form-control" type="text" id="phone" placeholder="Your Phone*">
+                </div>
+            </div>
+            <div class="col-md-6 py-5">
+                <div>
+                    <label class="form-label" for="message">Ingresa tu mensaje</label>
+                    <textarea class="form-control" placeholder="Message*" name="message" id="message"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center">
+            <button type="button" class="btn btn-warning text-white col-auto">
+                    Send Message
+            </button>
+        </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>
