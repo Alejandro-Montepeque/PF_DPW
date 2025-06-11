@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap';
+import Swal from 'sweetalert2';
 
 
 // Se hace una petición para obtener el archivo 'navbarComponent.html'y donde se encuentra ubicado
