@@ -8,38 +8,40 @@
 </head>
 <body>
     <div id="navbar-container"></div>
-    <div class="container d-md-flex flex-column justify-content-md-center">
-        <div class="text-center">
-            <h1>Contactenos</h1>
-            <p>Puedes ponerte en contacto con nosotros atravez de este formulario</p>
-        </div>
-        <div class="row">
-            <div class="col-md-6 py-5">
-                <div>
-                    <label class="form-label" for="name">Ingresa tu nombre</label>
-                    <input class="form-control" type="text" id="name" placeholder="Your Name*">
-                </div>
-                <div>
-                    <label class="form-label" for="email">Ingresa tu correo electronico</label>
-                    <input class="form-control" type="text" id="email" placeholder="Your Email*">
-                </div>
-                <div>
-                    <label class="form-label" for="phone">Ingresa tu telefono</label>
-                    <input class="form-control" type="text" id="phone" placeholder="Your Phone*">
-                </div>
+    <div class="wrapper d-flex flex-column min-vh-100">
+        <section class="form-section text-center flex-grow-1">
+              <div class="container">
+              <h2 class="fw-bold">CONTACT US</h2>
+              <p class="text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+  
+              <div class="row mt-5">
+                  <div class="col-md-6">
+                  <input type="text" class="form-control mb-3" placeholder="Your Name *" />
+                  <input type="email" class="form-control mb-3" placeholder="Your Email *" />
+                  <input type="text" class="form-control mb-3" placeholder="Your Phone *" />
+                  </div>
+                  <div class="col-md-6">
+                  <textarea class="form-control mb-3" rows="7" placeholder="Your Message *"></textarea>
+                  </div>
+              </div>
+  
+              <button class="btn btn-warning text-white px-5 mt-3">SEND MESSAGE</button>
+              </div>
+        </section>
+        <footer class="footer text-center">
+            <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+              <p class="mb-2">Copyright © Your Website 2021</p>
+              <div class="social-icons mb-2">
+                  <a href="#"><i class="fab fa-twitter fa-lg"></i></a>
+                  <a href="#"><i class="fab fa-facebook-f fa-lg"></i></a>
+                  <a href="#"><i class="fab fa-linkedin-in fa-lg"></i></a>
+              </div>
+              <div>
+                  <a href="#" class="text-decoration-none text-white me-3">Privacy Policy</a>
+                  <a href="#" class="text-decoration-none text-white">Terms of Use</a>
+              </div>
             </div>
-            <div class="col-md-6 py-5">
-                <div>
-                    <label class="form-label" for="message">Ingresa tu mensaje</label>
-                    <textarea class="form-control" placeholder="Message*" name="message" id="message"></textarea>
-                </div>
-            </div>
-        </div>
-        <div class="d-flex justify-content-center">
-            <button type="button" class="btn btn-warning text-white col-auto">
-                    Send Message
-            </button>
-        </div>
+        </footer>
     </div>
     <script type="module" src="/src/main.js"></script>
 </body>
