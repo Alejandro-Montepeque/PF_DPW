@@ -16,16 +16,16 @@
   
               <div class="row mt-5">
                   <div class="col-md-6">
-                  <input type="text" class="form-control mb-3" placeholder="Your Name *" />
-                  <input type="email" class="form-control mb-3" placeholder="Your Email *" />
-                  <input type="text" class="form-control mb-3" placeholder="Your Phone *" />
+                  <input type="text"  required id="name"  class="form-control mb-3 required" placeholder="Your Name *" />
+                  <input type="email" required  id="email" class="form-control mb-3" placeholder="Your Email *" />
+                  <input type="text"  required id="phone" class="form-control mb-3" placeholder="Your Phone *" />
                   </div>
                   <div class="col-md-6">
-                  <textarea class="form-control mb-3" rows="7" placeholder="Your Message *"></textarea>
+                  <textarea class="form-control mb-3" required id="message" rows="7" placeholder="Your Message *"></textarea>
                   </div>
               </div>
   
-              <button class="btn btn-warning text-white px-5 mt-3">SEND MESSAGE</button>
+              <button class="btn btn-warning text-white px-5 mt-3" id="sendBtn" >SEND MESSAGE</button>
               </div>
         </section>
         <footer class="footer text-center">
