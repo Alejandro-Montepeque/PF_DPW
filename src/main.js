@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap';
 import Swal from 'sweetalert2';
+import api from "./script/api.js"
 
 
 // Se hace una petición para obtener el archivo 'navbarComponent.html'y donde se encuentra ubicado
@@ -16,41 +17,57 @@ fetch('/components/navbarComponent.html')
   .catch(error => console.error('No se encuentra o no esta disponible el navbar', error))
 
 
-document.addEventListener('DOMContentLoaded', () => {
-  const sendBtn = document.getElementById('sendBtn');
+document.addEventListener("DOMContentLoaded", () => {
+  const sendBtn = document.getElementById("sendBtn");
 
-  sendBtn.addEventListener('click', (e) => {
+  sendBtn.addEventListener("click", async (e) => {
     e.preventDefault();
 
     const fields = [
-      { id: 'name', label: 'Nombre' },
-      { id: 'email', label: 'Email' },
-      { id: 'phone', label: 'telefono' },
-      { id: 'message', label: 'Mensaje' },
+      { id: "name", label: "Nombre" },
+      { id: "email", label: "Email" },
+      { id: "phone", label: "Teléfono" },
+      { id: "message", label: "Mensaje" },
     ];
 
     for (const field of fields) {
       const value = document.getElementById(field.id).value.trim();
       if (!value) {
         Swal.fire({
-          icon: 'warning',
-          title: 'Campo vacío',
+          icon: "warning",
+          title: "Campo vacío",
           text: `Por favor, complete el campo "${field.label}".`,
         });
         return;
       }
     }
 
-    // Mostrar alerta de éxito
-    Swal.fire({
-      icon: 'success',
-      title: 'Datos enviados con éxito',
-      text: 'Espere de 3 a 5 horas para ser contactado.',
-    }).then(() => {
-      // Limpiar los campos después de que el usuario cierre la alerta
-      fields.forEach(field => {
-        document.getElementById(field.id).value = '';
+    const payload = {
+      nombre: document.getElementById("name").value.trim(),
+      email: document.getElementById("email").value.trim(),
+      phone: document.getElementById("phone").value.trim(),
+      message: document.getElementById("message").value.trim(),
+    };
+
+    try {
+      const { data } = await api.post("/save_users", payload);
+
+      Swal.fire({
+        icon: "success",
+        title: "Datos enviados con éxito",
+        text: "Espere de 3 a 5 horas para ser contactado.",
+      }).then(() => {
+        fields.forEach((field) => {
+          document.getElementById(field.id).value = "";
+        });
       });
-    });
+    } catch (err) {
+      console.error("Error al conectar con la API:", err);
+      Swal.fire({
+        icon: "error",
+        title: "Error de conexión",
+        text: err.response?.data?.error || "No se pudo conectar con el servidor.",
+      });
+    }
   });
 });
