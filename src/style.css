@@ -92,3 +92,38 @@ footer {
   color: #6c757d;
   margin-bottom: 1rem;
 }
+
+.custom-card {
+  background: #fff;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+
+.custom-card:hover {
+  transform: translateY(-10px);
+  border-color: #ffc107;
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
+}
+
+.cloud-tecnologies {
+   flex: 1;
+  padding: 60px 15px;
+  background-image: url('/public/assets/cloud-tech.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+p {
+  color: white;
+}
+
+.services-bg {
+  background: radial-gradient(circle at top left, #1a237e, #000000);
+}
+h5 {
+  color:  #1e2227;
+}
