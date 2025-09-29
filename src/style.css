@@ -1,3 +1,4 @@
+
 html,body {
   margin: 0;
   padding: 0;
@@ -8,6 +9,10 @@ html,body {
 
 .navbar-custom {
   background-color: #1e2227 !important;
+}
+
+.labels-form {
+  color: #f4b400;
 }
 
 .navbar-custom .navbar-brand {
@@ -29,7 +34,7 @@ html,body {
 .form-section {
   flex: 1;
   padding: 60px 15px;
-  background-image: url('/public/assets/map_background.jpg');
+  background-image: url('/public/assets/bg-tech.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -57,7 +62,7 @@ footer {
 }
 .social-icons i {
   margin: 0 10px;
-  color: #26272C;
+  color: #FFFF;
 }
 .social-icons i:hover {
   color: #f4b400;
