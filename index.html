@@ -1,40 +1,52 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <title>InnoVatech</title>
-     <link rel="stylesheet" href="/src/style.css">
-  </head>
-  <body>
-      <div id="navbar-container"></div>
-      <header class="hero-section text-white text-center d-flex flex-column justify-content-center align-items-center">
-          <div class="container">
-              <div class="mt-5 pt-5">
-                  <p class="fst-italic fs-5">Innovación en la nube al alcance de tu empresa</p>
-                  <h1 class="display-4 fw-bold text-uppercase">Soluciones Tecnológicas que Impulsan tu Futuro</h1>
-                  <a href="/servicesView.html" class="btn btn-warning text-white fw-bold px-4 py-2 mt-4">Conoce más detalles..</a>
-                  <br>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login — Dark</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-dark text-light d-flex align-items-center min-vh-100">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+        <div class="card bg-secondary text-light shadow">
+          <div class="card-body">
+            <h3 class="card-title text-center mb-4">Iniciar sesión</h3>
+            <!-- Form tradicional que envía POST a /login -->
+            <form action="/login" method="POST" novalidate>
+              <div class="mb-3">
+                <label for="email" class="form-label">Correo electrónico</label>
+                <input id="email" name="email" type="email" required
+                       class="form-control bg-dark text-light border-secondary"
+                       placeholder="tu@ejemplo.com">
               </div>
-          </div>
-      </header>
-      <!-- Mision & Vision -->
-      <section class="text-white py-5" style="background-color: #1e1e1e;">
-          <div class="container">
-              <div class="row text-center">
-                  <div class="col-md-6 mb-4">
-                      <h3 class="fst-italic">Mision</h3>
-                      <p>Brindar soluciones tecnológicas innovadoras y seguras que faciliten la transformación digital de las empresas, mejorando su productividad y competitividad a través de servicios en la nube, desarrollo web y ciberseguridad.</p>
-                  </div>
-                  <div class="col-md-6">
-                      <h3 class="fst-italic">Vision</h3>
-                      <p>Ser líderes en la región en el desarrollo de soluciones digitales, impulsando la adopción de tecnologías emergentes y construyendo un ecosistema tecnológico sostenible que conecte personas, negocios e innovación.</p>
-                  </div>
-              </div>
-          </div>
-      </section>
 
-      <script type="module" src="/src/main.js"></script>
-  </body>
+              <div class="mb-3">
+                <label for="password" class="form-label">Contraseña</label>
+                <input id="password" name="password" type="password" required
+                       class="form-control bg-dark text-light border-secondary"
+                       placeholder="••••••••">
+              </div>
+
+              <div class="mb-3 form-check">
+                <input id="remember" name="remember" type="checkbox" class="form-check-input">
+                <label for="remember" class="form-check-label">Recordarme</label>
+              </div>
+
+              <div class="d-grid mb-2">
+                <a href="public/homeView.html"><button type="button" class="btn btn-outline-light">Entrar</button></a>
+               <!-- <button type="submit" class="btn btn-outline-light">Entrar</button -->
+              </div>
+
+              <div class="text-center">
+                <a href="public/registerView.html" class="link-info">Crear cuenta</a>
+              </div>
+            </form>
+          </div> <!-- card-body -->
+        </div> <!-- card -->
+      </div>
+    </div>
+  </div>
+</body>
 </html>
