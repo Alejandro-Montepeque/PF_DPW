@@ -5,128 +5,76 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mis Comentarios</title>
   <link rel="stylesheet" href="/src/style.css">
-  <style>
-    body { background-color: #f0f2f5; }
-    .comment-thread { background-color: #fff; border-radius: 0.5rem; padding: 1rem; max-height: 400px; overflow-y: auto; }
-    .comment-item { background-color: #e7f3ff; border: 1px solid #cce0ff; border-radius: 0.5rem; padding: 1rem; margin-bottom: 1rem; }
-    .admin-response { background-color: #f8f9fa; border-left: 3px solid #0d6efd; padding: 0.75rem; margin-top: 0.5rem; border-radius: 0.5rem; }
-  </style>
 </head>
 <body>
-     <div id="navbar-container"></div>
-  <div class="container mt-4">
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <!-- Formulario -->
-        <div class="card mb-4 blog-post p-4">
-          <h1 class="card-title">Tus Comentarios</h1>
-          <hr>
-          <form id="commentForm">
-            <input type="hidden" id="commentId">
+    <div id="navbar-container"></div>
+    <section class="comments-section">
+     <div class="comments-container">
+
+      <!-- Lista de comentarios -->
+      <div class="mb-4">
+        <h2 class="text-center mb-4" style="color: #f4b400;">
+          <i class="fa-regular fa-comments me-2"></i>Comentarios publicados
+        </h2>
+        <!-- Aquí se insertan los comentarios -->
+        <div id="commentList"> </div>
+        <!-- Si no hay comentarios -->
+        <!-- <p class="no-comments">Sin comentarios publicados aún.</p> -->
+      </div>
+      <!-- Formulario de nuevo comentario -->
+      <div class="comment-form-container mt-4">
+        <h2 class="mb-3" style="color:#f4b400;">
+          <i class="fa-solid fa-pen me-2"></i>Déjanos tu comentario
+        </h2>
+        <form id="commentForm">
+          <input type="hidden" id="commentId">
+
+          <div class="mb-3">
+            <label for="commentTitle" class="form-label labels-form">Título</label>
+            <input type="text" class="form-control" id="commentTitle" placeholder="Ingresa un título">
+          </div>
+
+          <div class="mb-3">
+            <label for="commentBody" class="form-label labels-form">Tu comentario</label>
+            <textarea class="form-control" id="commentBody" rows="3" placeholder="Escribe tu comentario..." required></textarea>
+          </div>
+
+          <div class="text-end">
+            <button type="submit" id="submitBtn">
+              Comentar <i class="fa-solid fa-paper-plane ms-1"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    </section>
+    <div class="modal fade" id="editCommentModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content" style="background-color:#2a2f36; color:#fff;">
+        <div class="modal-header border-secondary">
+          <h5 class="modal-title">Editar comentario</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <form id="editCommentForm">
+            <input type="hidden" id="editCommentId">
+
             <div class="mb-3">
-              <label for="commentEmail" class="form-label">Tu Email</label>
-              <input type="email" class="form-control" id="commentEmail" required>
+              <label for="editCommentTitle" class="form-label">Título</label>
+              <input type="text" class="form-control" id="editCommentTitle" required>
             </div>
+
             <div class="mb-3">
-              <label for="commentTitle" class="form-label">Título</label>
-              <input type="text" class="form-control" id="commentTitle">
+              <label for="editCommentBody" class="form-label">Comentario</label>
+              <textarea class="form-control" id="editCommentBody" rows="3" required></textarea>
             </div>
-            <div class="mb-3">
-              <label for="commentBody" class="form-label">Tu Comentario</label>
-              <textarea class="form-control" id="commentBody" rows="3" required></textarea>
-            </div>
-            <button type="submit" id="submitBtn" class="btn btn-primary">Comentar</button>
+
+            <button type="submit" class="btn btn-warning w-100 fw-bold">Guardar cambios</button>
           </form>
         </div>
-
-        <!-- Lista -->
-        <div class="comment-thread" id="commentList"></div>
       </div>
     </div>
   </div>
-
-  <script>
-    let editing = false;
-
-    async function loadComments(email) {
-      const res = await fetch(`/api/mis-comentarios?email=${encodeURIComponent(email)}`);
-      const comentarios = await res.json();
-      const container = document.getElementById("commentList");
-      container.innerHTML = "";
-
-      if (comentarios.length === 0) {
-        container.innerHTML = `<div class="alert alert-info">No se ha realizado ningún comentario.</div>`;
-        return;
-      }
-
-      comentarios.forEach(c => {
-        const div = document.createElement("div");
-        div.className = "comment-item";
-        div.innerHTML = `
-          <h5>${c.titulo || "Sin título"}</h5>
-          <p>${c.cuerpo}</p>
-          <small class="text-muted">${c.fecha || ""}</small>
-          ${c.respuesta ? `<div class="admin-response"><strong>Soporte:</strong> ${c.respuesta}</div>` : ""}
-          <div class="mt-2">
-            <button class="btn btn-sm btn-warning me-2" onclick="editComment('${c._id}', '${c.titulo || ""}', '${c.cuerpo}')">
-              <i class="bi bi-pencil"></i> Editar
-            </button>
-            <button class="btn btn-sm btn-danger" onclick="deleteComment('${c._id}')">
-              <i class="bi bi-trash"></i> Eliminar
-            </button>
-          </div>
-        `;
-        container.appendChild(div);
-      });
-    }
-
-    function editComment(id, titulo, cuerpo) {
-      document.getElementById("commentId").value = id;
-      document.getElementById("commentTitle").value = titulo;
-      document.getElementById("commentBody").value = cuerpo;
-      document.getElementById("submitBtn").textContent = "Actualizar";
-      editing = true;
-    }
-
-    async function deleteComment(id) {
-      if (confirm("¿Seguro que deseas eliminar este comentario?")) {
-        await fetch(`/api/mis-comentarios/${id}`, { method: "DELETE" });
-        loadComments(document.getElementById("commentEmail").value);
-      }
-    }
-
-    document.getElementById("commentForm").addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const email = document.getElementById("commentEmail").value;
-      const titulo = document.getElementById("commentTitle").value;
-      const cuerpo = document.getElementById("commentBody").value;
-      const id = document.getElementById("commentId").value;
-
-      if (editing) {
-        await fetch(`/api/mis-comentarios/${id}`, {
-          method: "PUT",
-          headers: {"Content-Type": "application/json"},
-          body: JSON.stringify({ titulo, cuerpo })
-        });
-        editing = false;
-        document.getElementById("submitBtn").textContent = "Comentar";
-        document.getElementById("commentId").value = "";
-      } else {
-        await fetch("/api/mis-comentarios", {
-          method: "POST",
-          headers: {"Content-Type": "application/json"},
-          body: JSON.stringify({ email, titulo, cuerpo })
-        });
-      }
-
-      document.getElementById("commentForm").reset();
-      loadComments(email);
-    });
-
-    document.getElementById("commentEmail").addEventListener("blur", (e) => {
-      if (e.target.value) loadComments(e.target.value);
-    });
-  </script>
-  <script type="module" src="/src/main.js"></script>
+  <script type="module" src="/src/script/comments.js"></script>
 </body>
 </html>

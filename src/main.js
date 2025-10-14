@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const { data, status } = await api.post('/login', payload)
 
       if (status == 200 ){
-        // localStorage.setItem("token", data.token);
+        localStorage.setItem("user_id", data.user.id);
   
          Swal.fire({
             icon: "success",
