@@ -1,5 +1,37 @@
-# Vue 3 + Vite
+## Tecnologías
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+- Vue
+- Bootstrap 5
+- Font Awesome
+- SweetAlert2
+- Axios (para consumir el backend)
+  
+## Estructura del Proyecto
+/src
+├─ main.js # Lógica principal del frontend
+├─ style.css # Estilos personalizados
+├─ api.js # Configuración de Axios
+/components
+└─ navbarComponent.html # Componente de la barra de navegación
+index.html # Página principal
+team.html # Página de equipo
+form.html # Formulario de contacto
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+## Funcionalidades
+
+- Formulario de contacto con validación y alertas interactivas.
+- Comunicación con el backend usando Axios.
+- Componente reutilizable de barra de navegación.
+- Página de equipo con diseño responsive.
+- Íconos de redes sociales interactivos.
+
+## Configuración de Variables de Entorno
+
+Se recomienda usar Vite para exponer variables al cliente:
+VITE_API_URL=URL-BACKEND
+
+## Cómo Ejecutar
+
+- npm install
+- npm run dev
+
