@@ -1,6 +1,6 @@
 ## Tecnologías
 
-- HTML5, CSS3, JavaScript (ES6+)
+- Vue
 - Bootstrap 5
 - Font Awesome
 - SweetAlert2
